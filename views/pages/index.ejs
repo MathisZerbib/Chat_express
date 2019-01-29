@@ -1,0 +1,34 @@
+<% include header %>
+<form action="/" method="post" class="ui form">
+
+<div class="field">
+<label for="message">Message </label>
+    <textarea name="message" id="message"></textarea>
+</div>
+
+    <button type="submit" class="ui blue labeled submit icon button">
+
+        <i class="icon edit"></i> Envoyez
+    </button>
+</form>
+<div class="ui comments">
+    <h3 class="ui diving header">Commentaires</h3>
+    <% for (message of messages ) {%>
+    <div class="comment">
+        <a class="avatar">
+        <img alt="Anonymous" src="https://sophosnews.files.wordpress.com/2014/04/anonymous-250.jpg">
+        </a>
+        <div class="content">*
+            <div class="metadata">
+                <div class="date">
+                <%= message.date ? message.date : "no date"%>
+                </div>
+
+            </div>
+            <div class="test"><%= message.message %></div>
+        </div>
+    </div>
+    <% } %>
+    </div>
+
+<% include footer %>
