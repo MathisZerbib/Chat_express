@@ -44,6 +44,15 @@ if (request.body.message === undefined || request.body.message === ''){
 
 });
 
+app.get('/message/:id', (request, response) => {
+
+    let Message = require('./models/message')
+    Message.find(request.params.id, function (message){
+
+        response.render('messages/show', {message: message})
+    })
+})
+
 process.on('SIGINT', () => { console.log("Bye bye!"); process.exit(); });
 
 app.listen(8888);

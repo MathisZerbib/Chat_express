@@ -1,0 +1,19 @@
+<% include ../pages/header %>
+<div class="ui comments">
+    <div class="comment">
+        <a class="avatar" href="/message/<%= message._id %>"> 
+        <img alt="Anonymous" src="https://sophosnews.files.wordpress.com/2014/04/anonymous-250.jpg">
+        </a>
+        <div class="content">
+            <div class="metadata">
+                <div class="date">
+                <%= message.created_at.fromNow() ? message.created_at.fromNow() : "no date"%>
+                </div>
+
+            </div>
+            <div class="test"><%= message.message %></div>
+        </div>
+    </div>
+    </div>
+
+    <% include  ../pages/footer %>

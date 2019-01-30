@@ -15,13 +15,13 @@
     <h3 class="ui diving header">Commentaires</h3>
     <% for (message of messages ) {%>
     <div class="comment">
-        <a class="avatar">
+        <a class="avatar" href="/message/<%= message.id %> "> 
         <img alt="Anonymous" src="https://sophosnews.files.wordpress.com/2014/04/anonymous-250.jpg">
         </a>
-        <div class="content">*
+        <div class="content">
             <div class="metadata">
                 <div class="date">
-                <%= message.date ? message.date : "no date"%>
+                <%= message.created_at.fromNow() ? message.created_at.fromNow() : "no date"%>
                 </div>
 
             </div>
